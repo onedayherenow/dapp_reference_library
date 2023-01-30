@@ -1,0 +1,20 @@
+// DATA TYPES REVIEW
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bool public myBool = true;
+
+int public myInt = 1;
+
+// if do not want negative integers
+uint public myUint = 1;
+
+// we can specify the number of bits , default = 256
+uint256 public myUint256 = 9999;
+
+//we can restrict to 8 bits
+uint8 public myUint8 = 8;
+
+// ENUMS
+// will help keep track of contract's active state
+enum State { Waiting, Ready, Active }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
