@@ -41,11 +41,24 @@ contract ERC20Token {
     //functions
     function buyToken() public payable {
         ERC20Token _token = ERC20Token(address(token));
-        _token.mint();  // minting 'instantiates' data into working memory, into the blockchain - added to blockchain
+        _token.mint();  // minting 'instantiates' data into working memory, into the blockchain - written to blockchain
         wallet.transfer(msg.value);
     }
 
+
+    // function mint() public {              
+    //    balances[msg.sender] += 1;     <----------- We do not use msg.sender 
+    //                                   <----------- because it always returns the address that started the contract
+    // }                                 <----------- so we use tx.origin instead to reference the address that invoked the transaction
     
+
+    // msg.sender can be a contract
+    // tx.origin can never be a contract
+
+    function mint() public {
+        balances[tx.origin] += 1;      
+    }
+
     //event    ---->  listen to them directly,, it's nice to call a function and see an event triggered as a confirmation test
     event Purchase(
         address indexed _buyer,
