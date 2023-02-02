@@ -12,7 +12,7 @@ pragma solidity ^0.8.13;
 /// @notice Explain to an end user what this does
 /// @dev Explain to a developer any extra details
 
-contract Events {
+contract ERC20Token {
 
     //constructor
     constructor(address payable _wallet, ERC20Token _token) public {
@@ -33,17 +33,16 @@ contract Events {
     mapping(address => uint256) public balances;  // this mapping here gives us a balance value for each address/mapping
 
 
-
     /////////////
     //FUNCTIONS////////
     
     //crud
 
     //functions
-    function buyToken() public payable {   // payable assures that this is a payable function, ether can safely be recieved here
-        balances[msg.sender] += 1; // msg.sender is the caller of the smart contract
-        wallet.transfer(msg.value);    // we can transfer ether to a wallet by calling (address).transfer
-        emit Purchase(msg.sender, 1); //we can trigger the purchase event
+    function buyToken() public payable {
+        ERC20Token _token = ERC20Token(address(token));
+        _token.mint();  // minting 'instantiates' data into working memory, into the blockchain - added to blockchain
+        wallet.transfer(msg.value);
     }
 
     
@@ -56,6 +55,6 @@ contract Events {
 
     //modifiers
 
-    
+
 
 }
