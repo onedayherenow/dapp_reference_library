@@ -15,8 +15,9 @@ pragma solidity ^0.8.13;
 contract Events {
 
     //constructor
-    constructor(address payable _wallet) public {
+    constructor(address payable _wallet, ERC20Token _token) public {
         wallet = _wallet;
+        token = _token;
     }
 
     /////////////
@@ -24,6 +25,7 @@ contract Events {
     
     //properties
     address payable wallet;  // 0.5.1 standard = payable keyword must included in address declaration
+    address public token; // using for testing ERC20 contract
 
     //structs
 
@@ -55,4 +57,5 @@ contract Events {
     //modifiers
 
     
+
 }
