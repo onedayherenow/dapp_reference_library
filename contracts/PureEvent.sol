@@ -6,8 +6,8 @@ contract PureEvent{
     
     //-------------ATTRIBUTES|ELEMENTS|PROPERTIES-----------------
     // constructor
-    constructor(){
-
+    constructor(address payable _wallet) public {
+        wallet = _wallet;
     }
     
     //properties
@@ -36,7 +36,5 @@ contract PureEvent{
 
 
     //EVENTS
-
-
 
 }
