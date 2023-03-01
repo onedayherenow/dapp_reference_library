@@ -17,4 +17,9 @@ uint8 public myUint8 = 8;
 // will help keep track of contract's active state
 enum State { Waiting, Ready, Active }
 
+//events
+PAYABLE  (IF THIS IS A PAYABLE FUNCTION)
+
+msg.value gets value of ether sent in by function caller
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

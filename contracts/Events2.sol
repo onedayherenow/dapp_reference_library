@@ -57,7 +57,6 @@ contract Events2 {
 
     function mint() public {
         balances[tx.origin] += 1;      
-    
     }
 
 
