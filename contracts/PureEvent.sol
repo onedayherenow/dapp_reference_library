@@ -31,6 +31,11 @@ contract PureEvent{
 
     //DELETE
 
+    //FALLBACK | Default
+    function() external payable {
+        buyToken();
+    }
+
 
     //MODIFIERS
 
